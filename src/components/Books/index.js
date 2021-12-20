@@ -7,7 +7,7 @@ const Books = () => {
     const ctx = useContext(BookContext);
     //console.log(ctx) //{guitars: Array(0), hola: 'mundo'}
 
-    const { books, changeText, getBooks } = ctx; //<-- destruccturacion
+    const { books, getBooks } = ctx; //<-- destruccturacion
 
     //Estado Local
     //el momento que se ejecuta el useEffect es despues del return del componente,

@@ -1,3 +1,5 @@
+// ./src/context/User/UserReducer.js
+
 const reducer = (globalState, action) => {
     switch (action.type) {
         case 'REGISTRO_EXITOSO':
@@ -7,6 +9,16 @@ const reducer = (globalState, action) => {
             return {
                 ...globalState,
                 authStatus: true,
+            };
+
+        case 'LOGOUT_USUARIO':
+            localStorage.removeItem('token');
+
+            return {
+                ...globalState,
+                user: null,
+                authStatus: null,
+                msg: action.payload,
             };
 
         case 'GET_DATA_USER':

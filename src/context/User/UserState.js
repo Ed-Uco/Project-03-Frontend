@@ -77,7 +77,11 @@ const UserState = props => {
             console.log(error);
         }
     };
-
+    const logoutUser = async () => {
+    dispatch({
+        type: 'LOGOUT_USUARIO',
+    });
+    };
     // 4. RETORNO
     return (
         <UserContext.Provider
@@ -87,6 +91,7 @@ const UserState = props => {
                 registerUser,
                 loginUser,
                 verifyingToken,
+                logoutUser
             }}
         >
             {props.children}

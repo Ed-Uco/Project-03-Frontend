@@ -24,7 +24,7 @@ const CreateBook = () => {
       isbn: '',
       categoria: '',
       cantidad: '',
-      estatus: '',
+      estatus: 'Disponible',
       userCreator: '',
       usereserver: '',
     });
@@ -67,82 +67,75 @@ const CreateBook = () => {
                         <div className="grid grid-cols-6 gap-6">
                             <div className="col-span-6 sm:col-span-3">
                                 <label
-                                    for="first-name"
+                                    for="titulo"
                                     className="block text-sm font-medium text-gray-700"
                                 >
-                                    Nombre
+                                    Titulo
                                 </label>
                                 <input
                                     onChange={event => {
                                         handleChange(event);
                                     }}
                                     type="text"
-                                    name="nombre"
+                                    name="titulo"
                                     className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 />
                             </div>
 
                             <div className="col-span-6 sm:col-span-3">
                                 <label
-                                    for="last-name"
+                                    for="autor"
                                     className="block text-sm font-medium text-gray-700"
                                 >
-                                    Precio (MXN)
+                                    Autor
                                 </label>
                                 <input
                                     onChange={event => {
                                         handleChange(event);
                                     }}
-                                    type="number"
-                                    name="precio"
+                                    type="text"
+                                    name="autor"
                                     className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 />
                             </div>
 
                             <div className="col-span-6 sm:col-span-4">
                                 <label
-                                    for="email-address"
+                                    for="paginas"
                                     className="block text-sm font-medium text-gray-700"
                                 >
-                                    Imagen
+                                    Páginas
+                                </label>
+                                <input
+                                    type="number"
+                                    name="paginas"
+                                    onChange={event => {
+                                        handleChange(event);
+                                    }}
+                                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                />
+                            </div>
+
+                            <div className="col-span-6 sm:col-span-4">
+                                <label
+                                    for="imagenc"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    Imagen Portada
                                 </label>
                                 <input
                                     type="text"
-                                    name="imagen"
+                                    name="imageng"
                                     onChange={event => {
                                         handleChange(event);
                                     }}
                                     className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 />
-                            </div>
-
-                            <div className="col-span-6 sm:col-span-4">
-                                <label
-                                    for="country"
-                                    className="block text-sm font-medium text-gray-700"
-                                >
-                                    Color
-                                </label>
-                                <select
-                                    onChange={event => {
-                                        handleChange(event);
-                                    }}
-                                    name="color"
-                                    className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                >
-                                    <option value={''}>---🧟---</option>
-                                    <option value={'Blanco con negro'}>
-                                        Blanco con Negro
-                                    </option>
-                                    <option value={'Rojo con blanco'}>
-                                        Rojo con Blanco
-                                    </option>
-                                </select>
                             </div>
 
                             <div className="col-span-6 sm:col-span-6 lg:col-span-4">
                                 <label
-                                    for="city"
+                                    for="descripcion"
                                     className="block text-sm font-medium text-gray-700"
                                 >
                                     Descripción
@@ -153,6 +146,124 @@ const CreateBook = () => {
                                     }}
                                     type="text"
                                     name="descripcion"
+                                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                            <div className="col-span-6 sm:col-span-6 lg:col-span-4">
+                                <label
+                                    for="lenguaje"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    Lenguaje
+                                </label>
+                                <select
+                                    onChange={event => {
+                                        handleChange(event);
+                                    }}
+                                    name="lenguaje"
+                                    class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                >
+                                    <option value={''}>---</option>
+                                    <option value={'en'}>Inglés</option>
+                                    <option value={'es'}>Español</option>
+                                </select>
+                            </div>
+                            <div className="col-span-6 sm:col-span-6 lg:col-span-4">
+                                <label
+                                    for="publicacion"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    Fecha de Publicación
+                                </label>
+                                <textarea
+                                    onChange={event => {
+                                        handleChange(event);
+                                    }}
+                                    type="date"
+                                    name="publicacion"
+                                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                            <div className="col-span-6 sm:col-span-6 lg:col-span-4">
+                                <label
+                                    for="editorial"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    Editorial
+                                </label>
+                                <textarea
+                                    onChange={event => {
+                                        handleChange(event);
+                                    }}
+                                    type="text"
+                                    name="editorial"
+                                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                            <div className="col-span-6 sm:col-span-6 lg:col-span-4">
+                                <label
+                                    for="isbn"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    ISBN
+                                </label>
+                                <textarea
+                                    onChange={event => {
+                                        handleChange(event);
+                                    }}
+                                    type="text"
+                                    name="isbn"
+                                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                            <div className="col-span-6 sm:col-span-6 lg:col-span-4">
+                                <label
+                                    for="categoria"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    Categoria
+                                </label>
+                                <select
+                                    onChange={event => {
+                                        handleChange(event);
+                                    }}
+                                    name="categoria"
+                                    class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                >
+                                    <option value={''}>---</option>
+                                    <option value={'Fiction'}>Ficción</option>
+                                    <option value={'Fantasy'}>Juvenil</option>
+                                    <option value={'Poetic'}>Poético</option>
+                                    <option value={'Recreational'}>
+                                        Recreativo
+                                    </option>
+                                    <option value={'Monograph'}>
+                                        Monografía
+                                    </option>
+                                    <option value={'Travel'}>
+                                        De Viaje
+                                    </option>
+                                    <option value={'Science'}>
+                                        Ciencia
+                                    </option>
+                                    <option value={'Literature'}>
+                                        Literatura
+                                    </option>
+                                </select>
+                            </div>
+                            <div className="col-span-6 sm:col-span-6 lg:col-span-4">
+                                <label
+                                    for="cantidad"
+                                    className="block text-sm font-medium text-gray-700"
+                                >
+                                    Cantidad de libros
+                                </label>
+                                <input
+                                    onChange={event => {
+                                        handleChange(event);
+                                    }}
+                                    type="number"
+                                    name="cantidad"
                                     className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 />
                             </div>

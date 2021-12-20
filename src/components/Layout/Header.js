@@ -5,7 +5,7 @@ import UserContext from '../../context/User/UserContext';
 export default function Header() {
     const ctx = useContext(UserContext);
 
-    const { currentUser, verifyingToken } = ctx;
+    const { currentUser, verifyingToken, logoutUser } = ctx;
 
     useEffect(() => {
         verifyingToken();
@@ -19,13 +19,13 @@ export default function Header() {
             >
                 <div className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
                     <div className="flex items-center">
-                        <Link to="/">
+                         <Link to="/">
                             <img
                                 className="h-10 w-auto"
-                                src="https://cdn.worldvectorlogo.com/logos/ironhack-1.svg"
+                                src="./../images/logo.png"
                                 alt=""
                             />
-                        </Link>
+                        </Link> 
                         <div className="ml-10 space-x-8 lg:block">
                             <Link
                                 to="/books"
@@ -48,14 +48,17 @@ export default function Header() {
                         </div>
                     </div>
                     <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                        {currentUser.nombre ? (
+                        {currentUser.nombre ? 
+                            <>
                             <Link
                                 to="/profile"
                                 className="text-base font-medium text-white hover:text-indigo-50"
                             >
                                 Tu perfil
                             </Link>
-                        ) : (
+                            <a onClick={() => logoutUser()} href="/" className="text-base font-medium text-white hover:text-indigo-50">Cerrar sesión</a>
+                            </>
+                         : (
                             <>
                                 <Link
                                     to="/registro"
