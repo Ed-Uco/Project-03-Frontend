@@ -17,7 +17,7 @@ const CreateBook = () => {
       paginas: '',
       imagenc: '',
       imageng: '',
-      description: '',
+      descripcion: '',
       lenguaje: '',
       publicacion: '',
       editorial: '',
@@ -25,7 +25,7 @@ const CreateBook = () => {
       categoria: '',
       cantidad: '',
       estatus: 'Disponible',
-      userCreator: '',
+      userCreator: 'admin',
       usereserver: '',
     });
 
@@ -240,12 +240,8 @@ const CreateBook = () => {
                                     <option value={'Monograph'}>
                                         Monografía
                                     </option>
-                                    <option value={'Travel'}>
-                                        De Viaje
-                                    </option>
-                                    <option value={'Science'}>
-                                        Ciencia
-                                    </option>
+                                    <option value={'Travel'}>De Viaje</option>
+                                    <option value={'Science'}>Ciencia</option>
                                     <option value={'Literature'}>
                                         Literatura
                                     </option>
@@ -263,6 +259,7 @@ const CreateBook = () => {
                                         handleChange(event);
                                     }}
                                     type="number"
+                                    min="0"
                                     name="cantidad"
                                     className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 />
