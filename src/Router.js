@@ -18,51 +18,44 @@ import Private from './routes/Private';
 import Profile from './components/User/Profile';
 import EditBook from './components/Books/Single/Edit';
 
+
 // 2. FUNCIÓN
 const Router = () => {
     return (
         <>
             <UserState>
-                    <BookState>
-                        <BrowserRouter>
-                            <Routes>
-                                <Route path="/" element={<Layout />}>
-                                    <Route index element={<Home />} />
-                                    <Route
-                                        path="registro"
-                                        element={<Auth component={Register} />}
-                                    />
-                                    <Route
-                                        path="iniciar-sesion"
-                                        element={<Auth component={Login} />}
-                                    />
-                                    <Route
-                                        path="books"
-                                        element={<Books />}
-                                    />
+                <BookState>
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path="/" element={<Layout />}>
+                                <Route index element={<Home />} />
+                                <Route
+                                    path="registro"
+                                    element={<Auth component={Register} />}
+                                />
+                                <Route
+                                    path="iniciar-sesion"
+                                    element={<Auth component={Login} />}
+                                />
+                                <Route path="books" element={<Books />} />
 
-                                    <Route
-                                        path="books/crear"
-                                        element={<CreateBook />}
-                                    />
-                                    <Route
-                                        path="books/:id"
-                                        element={<Single />}
-                                    />
-                                    <Route
-                                        path="books/:id/editar"
-                                        element={<EditBook />}
-                                    /> 
-                                    <Route
-                                        path="profile"
-                                        element={
-                                            <Private component={Profile} />
-                                        }
-                                    />
-                                </Route>
-                            </Routes>
-                        </BrowserRouter>
-                      </BookState>
+                                <Route
+                                    path="books/crear"
+                                    element={<CreateBook />}
+                                />
+                                <Route path="books/:id" element={<Single />} />
+                                <Route
+                                    path="books/:id/editar"
+                                    element={<EditBook />}
+                                />
+                                <Route
+                                    path="profile"
+                                    element={<Private component={Profile} />}
+                                />
+                            </Route>
+                        </Routes>
+                    </BrowserRouter>
+                </BookState>
             </UserState>
         </>
     );

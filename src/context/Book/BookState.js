@@ -94,6 +94,18 @@ const BookState = props => {
         });
     };
 
+
+     const deleteBook = async (idBook) => {
+         const res = await axiosClient.delete(`books/delete/${idBook}`);
+
+         const deletedBook = res.data.data;
+
+         dispatch({
+             type: 'DELETE_BOOK',
+             payload: deletedBook,
+         });
+     };
+
     // 4. RETORNO
     return (
         <BookContext.Provider
@@ -106,6 +118,7 @@ const BookState = props => {
                 getBook,
                 createBook,
                 updateBook,
+                deleteBook,
             }}
         >
             {props.children}
