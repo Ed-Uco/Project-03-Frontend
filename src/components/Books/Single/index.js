@@ -8,7 +8,7 @@ const Single = () => {
 
     const params = useParams();
     const id = params.id;
-    //console.log(params, id) //{id: '61ba1b01dae493ac19bd1ac9'} // '61ba1b01dae493ac19bd1ac9'
+
 
     useEffect(() => {
         getBook(id);

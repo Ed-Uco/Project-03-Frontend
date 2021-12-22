@@ -6,84 +6,41 @@ import { Link } from 'react-router-dom';
 
 
 export default function Profile() {
-    const params = useParams();
-    const userId = params.id;
     const ctx = useContext(UserContext);
-
-    
-    
-    console.log("ctx de Profile",ctx)
-
-     const { currentUser, getUser, updateUser } = ctx;
+    const { currentUser, getUser } = ctx;
+    const userId = currentUser._id;
+     
 
      // 2. ESTADO LOCAL
      const [userData, setUserData] = useState({
          nombre: '',
-/*          autor: '',
-         paginas: '',
-         imagenc: '',
-         imageng: '',
-         descripcion: '', */
+         apellido: '',
+        direccion: '',
+         email: '',
+ 
      });
 
      useEffect(() => {
          getUser(userId);
-         console.log("userID", userId);
      }, []);
 
      // USEEFFECT PARA ACTUALIZAR LOS DATOS DEL ESTADO GLOBAL AL ESTADO LOCAL
      useEffect(() => {
          const {
-             nombre,
-     /*         autor,
-             paginas,
-             imagenc,
-             imageng,
-             descripcion,
-             lenguaje,
-             publicacion,
-             editorial,
-             isbn,
-             categoria,
-             cantidad,
-             estatus,
-             userCreator,
-             usereserver, */
+        nombre,
+        apellido,
+        direccion,
+        email,
          } = ctx.currentUser;
 
          setUserData({
              nombre: nombre,
-/*              autor: autor,
-             paginas: paginas,
-             imagenc: imagenc,
-             imageng: imageng,
-             descripcion: descripcion,
-             lenguaje: lenguaje,
-             publicacion: publicacion,
-             editorial: editorial,
-             isbn: isbn,
-             categoria: categoria,
-             cantidad: cantidad,
-             estatus: estatus,
-             userCreator: userCreator,
-             usereserver: usereserver, */
+             apellido: apellido,
+             direccion: direccion,
+             email: email,
          });
      }, [currentUser]);
-/* 
-     const handleChange = e => {
-         e.preventDefault();
 
-         setUserData({
-             ...userData,
-             [e.target.name]: e.target.value,
-         });
-     };
-
-     const handleSubmit = e => {
-         e.preventDefault();
-
-         updateUser(userData, userId);
-     }; */
 
     return (
         <>
@@ -103,28 +60,28 @@ export default function Profile() {
             >
                 Nombre
             </label>
-            <p className="leading-relaxed">{currentUser.nombre}</p>
+            <p className="leading-relaxed">{userData.nombre}</p>
             <label
                 for="apellido"
                 className="block text-sm font-medium text-gray-700"
             >
                 Apellido
             </label>
-            <p className="leading-relaxed">{currentUser.apellido}</p>
+            <p className="leading-relaxed">{userData.apellido}</p>
             <label
                 for="email"
                 className="block text-sm font-medium text-gray-700"
             >
                 Email
             </label>
-            <p className="leading-relaxed">{currentUser.email}</p>
+            <p className="leading-relaxed">{userData.email}</p>
             <label
                 for="direccion"
                 className="block text-sm font-medium text-gray-700"
             >
                 Dirección
             </label>
-            <p className="leading-relaxed">{currentUser.direccion}</p>
+            <p className="leading-relaxed">{userData.direccion}</p>
         </>
     );
 }

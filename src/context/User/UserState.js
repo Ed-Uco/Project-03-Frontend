@@ -16,6 +16,7 @@ const UserState = props => {
             email: '',
             password: '',
             admin: '',
+            _id: '',
         },
         authStatus: false,
     };
@@ -26,9 +27,6 @@ const UserState = props => {
     // 3. FUNCIONES
     const registerUser = async form => {
         const res = await axiosClient.post('users/create', form);
-
-        console.log(res);
-
         const token = res.data.data;
 
         dispatch({
@@ -39,25 +37,19 @@ const UserState = props => {
     };
 
     const updateUser = async (form, userId) => {
-        const res = await axiosClient.put(`users/edit/${userId}`, form);
+        const res = await axiosClient.put(`users/edituser/${userId}`, form);
 
         const updatedUser = res.data.data;
-
         dispatch({
             type: 'UPDATE_USER',
             payload: updatedUser,
         });
-         window.location.replace('/users');
+         window.location.replace('/');
     };
 
 
     const getUser = async userId => {
-        console.log(userId);
-
-        const res = await axiosClient.get(`users/readone/${userId}`);
-
-        console.log(res);
-
+        const res = await axiosClient.get(`users/readoneuser/${userId}`);
         const selectedUser = res.data.data;
 
         dispatch({
@@ -71,12 +63,7 @@ const UserState = props => {
 
 
     const loginUser = async form => {
-        console.log(form);
-
         const res = await axiosClient.post('users/login', form);
-
-        console.log(res);
-
         const token = res.data.data;
 
         dispatch({
@@ -98,9 +85,6 @@ const UserState = props => {
 
         try {
             const res = await axiosClient.get('users/verifytoken');
-
-            console.log(res);
-
             const userData = res.data.data;
 
             dispatch({

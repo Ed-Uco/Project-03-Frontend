@@ -8,7 +8,6 @@ export default function EditUser() {
     // 1. ESTADO GLOBAL
     const params = useParams();
     const userId = params.id;
-
     const ctx = useContext(UserContext);
 
     const { currentUser, getUser, updateUser } = ctx;
@@ -80,7 +79,7 @@ export default function EditUser() {
                         }}
                         type="text"
                         name="nombre"
-                        value={currentUser.nombre}
+                        value={userData.nombre}
                         className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                 </div>
@@ -98,7 +97,7 @@ export default function EditUser() {
                         }}
                         type="text"
                         name="apellido"
-                        value={currentUser.apellido}
+                        value={userData.apellido}
                         className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                 </div>
@@ -116,7 +115,7 @@ export default function EditUser() {
                         }}
                         type="email"
                         name="email"
-                        value={currentUser.email}
+                        value={userData.email}
                         className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                 </div>
@@ -133,7 +132,7 @@ export default function EditUser() {
                         }}
                         type="text"
                         name="direccion"
-                        value={currentUser.direccion}
+                        value={userData.direccion}
                         className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                 </div>
