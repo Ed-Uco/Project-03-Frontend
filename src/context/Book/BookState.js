@@ -81,6 +81,7 @@ const BookState = props => {
         const res = await axiosClient.post('books/create', form);
 
         console.log(res);
+        window.location.replace('/books');
     };
 
     const updateBook = async (form, idBook) => {
@@ -92,6 +93,7 @@ const BookState = props => {
             type: 'UPDATE_BOOK',
             payload: updatedBook,
         });
+        window.location.replace('/books');
     };
 
 
@@ -104,6 +106,7 @@ const BookState = props => {
              type: 'DELETE_BOOK',
              payload: deletedBook,
          });
+         window.location.replace('/books');
      };
 
     // 4. RETORNO

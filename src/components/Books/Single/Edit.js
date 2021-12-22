@@ -3,12 +3,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import BookContext from '../../../context/Book/BookContext';
 
-import { useParams } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 export default function Edit() {
     // 1. ESTADO GLOBAL
     const params = useParams();
     const idBook = params.id;
-
+    console.log("IdBook del Edit", idBook);
     const ctx = useContext(BookContext);
 
     const { singleBook, getBook, updateBook } = ctx;
@@ -89,6 +89,7 @@ export default function Edit() {
         e.preventDefault();
 
         updateBook(bookData, idBook);
+       
     };
 
     return (
@@ -96,6 +97,7 @@ export default function Edit() {
             <form
                 onSubmit={event => {
                     handleSubmit(event);
+                    
                 }}
             >
                 <div className="shadow sm:rounded-md sm:overflow-hidden">
@@ -330,6 +332,7 @@ export default function Edit() {
                         >
                             Guardar libro
                         </button>
+                        
                     </div>
                 </div>
             </form>

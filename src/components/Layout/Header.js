@@ -1,12 +1,13 @@
 import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from '../../context/User/UserContext';
+import logo from './../images/logo.png'
 
 export default function Header() {
     const ctx = useContext(UserContext);
 
     const { currentUser, verifyingToken, logoutUser } = ctx;
-
+    console.log(ctx);
     useEffect(() => {
         verifyingToken();
     }, []);
@@ -22,7 +23,7 @@ export default function Header() {
                          <Link to="/">
                             <img
                                 className="h-10 w-auto"
-                                src="./../images/logo.png"
+                                src={logo}
                                 alt=""
                             />
                         </Link> 

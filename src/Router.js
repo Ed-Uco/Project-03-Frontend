@@ -17,6 +17,9 @@ import Auth from './routes/Auth';
 import Private from './routes/Private';
 import Profile from './components/User/Profile';
 import EditBook from './components/Books/Single/Edit';
+import EditUser from './components/User/Single/EditUser';
+
+
 
 
 // 2. FUNCIÓN
@@ -37,11 +40,23 @@ const Router = () => {
                                     path="iniciar-sesion"
                                     element={<Auth component={Login} />}
                                 />
-                                <Route path="books" element={<Books />} />
-
+                                {/*  <Route path="books" element={<Books />} /> */}
                                 <Route
+                                    path="books"
+                                    element={<Books />}
+                                />
+
+                                {/*     <Route
                                     path="books/crear"
                                     element={<CreateBook />}
+                                /> */}
+                                <Route
+                                    path="users/:id/editar"
+                                    element={<EditUser />}
+                                />
+                                <Route
+                                    path="books/crear"
+                                    element={<Private component={CreateBook} />}
                                 />
                                 <Route path="books/:id" element={<Single />} />
                                 <Route

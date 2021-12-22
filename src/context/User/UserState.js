@@ -35,7 +35,40 @@ const UserState = props => {
             type: 'REGISTRO_EXITOSO',
             payload: token,
         });
+         window.location.replace('/');
     };
+
+    const updateUser = async (form, userId) => {
+        const res = await axiosClient.put(`users/edit/${userId}`, form);
+
+        const updatedUser = res.data.data;
+
+        dispatch({
+            type: 'UPDATE_USER',
+            payload: updatedUser,
+        });
+         window.location.replace('/users');
+    };
+
+
+    const getUser = async userId => {
+        console.log(userId);
+
+        const res = await axiosClient.get(`users/readone/${userId}`);
+
+        console.log(res);
+
+        const selectedUser = res.data.data;
+
+        dispatch({
+            type: 'GET_USER',
+            payload: selectedUser,
+        });
+    };
+
+
+
+
 
     const loginUser = async form => {
         console.log(form);
@@ -50,6 +83,7 @@ const UserState = props => {
             type: 'LOGIN_EXITOSO',
             payload: token,
         });
+         window.location.replace('/');
     };
 
     const verifyingToken = async () => {
@@ -91,7 +125,9 @@ const UserState = props => {
                 registerUser,
                 loginUser,
                 verifyingToken,
-                logoutUser
+                logoutUser,
+                updateUser,
+                getUser
             }}
         >
             {props.children}

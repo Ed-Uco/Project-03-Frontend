@@ -16,10 +16,6 @@ const Single = () => {
 
     return (
         <div>
-           {/*  Página individual de un libro */}
-            {/* <button onClick={() => { getGuitar(id) }}>
-				Obtener guitarra individual
-			</button> */}
             <div class="mt-4 flex md:mt-0">
                 <Link to={`/books/${id}/editar`}>
                     <button
