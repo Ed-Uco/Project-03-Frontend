@@ -43,14 +43,14 @@ export default function Header() {
                             <>
                                 <Link
                                     to="/profile"
-                                    className="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-origin-border px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:from-purple-700 hover:to-indigo-700"
+                                    className="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gradient-to-r from-black-600 to-indigo-600 bg-origin-border px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white "
                                 >
                                     Tu perfil
                                 </Link>
                                 <a
                                     onClick={() => logoutUser()}
                                     href="/"
-                                    className="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-origin-border px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:from-purple-700 hover:to-indigo-700"
+                                    className="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gradient-to-r from-black-600 to-indigo-600 bg-origin-border px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white "
                                 >
                                     Cerrar sesión
                                 </a>
@@ -59,13 +59,13 @@ export default function Header() {
                             <>
                                 <Link
                                     to="/registro"
-                                    class="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:from-purple-700 hover:to-indigo-700"
+                                    class="ml-8 whitespace-nowrap inline-flex items-center justify-center text-white"
                                 >
                                     Crear cuenta
                                 </Link>
                                 <Link
                                     to="/iniciar-sesion"
-                                    class="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-origin-border px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:from-purple-700 hover:to-indigo-700"
+                                    class="ml-8 whitespace-nowrap inline-flex items-center justify-center text-white"
                                 >
                                     Iniciar sesión
                                 </Link>
