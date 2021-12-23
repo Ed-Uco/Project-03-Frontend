@@ -20,13 +20,9 @@ export default function Header() {
             >
                 <div className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
                     <div className="flex items-center">
-                         <Link to="/">
-                            <img
-                                className="h-10 w-auto"
-                                src={logo}
-                                alt=""
-                            />
-                        </Link> 
+                        <Link to="/">
+                            <img className="h-20 w-25" src={logo} alt="" />
+                        </Link>
                         <div className="ml-10 space-x-8 lg:block">
                             <Link
                                 to="/books"
@@ -34,12 +30,6 @@ export default function Header() {
                             >
                                 Libros
                             </Link>
-                            {/* <Link
-                                to="/tiendas"
-                                className="text-base font-medium text-white hover:text-indigo-50"
-                            >
-                                Tiendas
-                            </Link> */}
                             <Link
                                 to="/sobre-nosotros"
                                 className="text-base font-medium text-white hover:text-indigo-50"
@@ -49,17 +39,23 @@ export default function Header() {
                         </div>
                     </div>
                     <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                        {currentUser.nombre ? 
+                        {currentUser.nombre ? (
                             <>
-                            <Link
-                                to="/profile"
-                                className="text-base font-medium text-white hover:text-indigo-50"
-                            >
-                                Tu perfil
-                            </Link>
-                            <a onClick={() => logoutUser()} href="/" className="text-base font-medium text-white hover:text-indigo-50">Cerrar sesión</a>
+                                <Link
+                                    to="/profile"
+                                    className="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-origin-border px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:from-purple-700 hover:to-indigo-700"
+                                >
+                                    Tu perfil
+                                </Link>
+                                <a
+                                    onClick={() => logoutUser()}
+                                    href="/"
+                                    className="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-origin-border px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:from-purple-700 hover:to-indigo-700"
+                                >
+                                    Cerrar sesión
+                                </a>
                             </>
-                         : (
+                        ) : (
                             <>
                                 <Link
                                     to="/registro"

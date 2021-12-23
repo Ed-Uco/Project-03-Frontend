@@ -2,7 +2,7 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from './../../context/User/UserContext';
-
+import logo from './../images/logo.png';
 export default function Register() {
     const ctx = useContext(UserContext);
 
@@ -36,10 +36,7 @@ export default function Register() {
     return (
         <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
-                <img
-                    className="mx-auto h-12 w-auto"
-                    src="https://cdn.worldvectorlogo.com/logos/ironhack-1.svg"
-                />
+                <img className="mx-auto h-20 w-23" src={logo} alt="" />
                 <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
                     Crea tu cuenta
                 </h2>
