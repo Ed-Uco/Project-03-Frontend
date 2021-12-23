@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import UserContext from '../context/User/UserContext';
 import wall from './images/wall.jpg'
-
+import { Link } from 'react-router-dom';
 import { Fragment, useState } from 'react';
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react';
 import {
@@ -439,22 +439,27 @@ export default function Home() {
                             Los mejores y nuevos títulos están aquí!
                         </h1>
                         <p className="mt-4 text-xl text-white">
-                            Visite nuestro catálogo de libros en línea llegando cada semana o suscríbase a nuestro boletín electrónico.
+                            Visite nuestro catálogo de libros en línea llegando
+                            cada semana o suscríbase a nuestro boletín
+                            electrónico.
                         </p>
-                        <a
+                        {/*                         <a
                             href="/books"
                             className="mt-8 inline-block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100"
                         >
                             Ver nuevos títulos
-                        </a>
+                        </a> */}
+                        <Link
+                            to="/books"
+                            className="mt-8 inline-block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100"
+                        >
+                            Ver nuevos títulos
+                        </Link>
                     </div>
                 </div>
 
                 <main>
                     {/* Category section */}
-
-
-
 
                     {/* Collection section */}
                     <section
@@ -510,7 +515,6 @@ export default function Home() {
                         <div className="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
                             <div className="grid grid-cols-2 gap-8 xl:col-span-2">
                                 <div className="space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
-
                                     <div>
                                         <h3 className="text-sm font-medium text-white">
                                             Conectar
@@ -540,10 +544,13 @@ export default function Home() {
                             </div>
                             <div className="mt-12 md:mt-16 xl:mt-0">
                                 <h3 className="text-sm font-medium text-white">
-                                    Ingrese su dirección electrónica y suscríbase a nuestro boletin de noticias.
+                                    Ingrese su dirección electrónica y
+                                    suscríbase a nuestro boletin de noticias.
                                 </h3>
                                 <p className="mt-6 text-sm text-gray-300">
-                                    Las últimas noticias de nuestros libros más recientes llegando directamente a su correo electrónico.
+                                    Las últimas noticias de nuestros libros más
+                                    recientes llegando directamente a su correo
+                                    electrónico.
                                 </p>
                                 <form className="mt-2 flex sm:max-w-md">
                                     <label
@@ -570,7 +577,6 @@ export default function Home() {
                                 </form>
                             </div>
                         </div>
-
                     </div>
                 </footer>
             </div>
